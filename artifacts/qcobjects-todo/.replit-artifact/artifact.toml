@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "QCObjects Todo"
+description = "A focused, local-first todo app built around QCObjects product principles: metadata-driven configuration, component-based rendering, and a fast personal workflow with clear progress telemetry."
+version = "1.0.0"
+id = "artifacts/qcobjects-todo"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21105
+
+[services.development]
+run = "pnpm --filter @workspace/qcobjects-todo run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/qcobjects-todo", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/qcobjects-todo/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21105"
+BASE_PATH = "/"

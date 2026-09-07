@@ -1,0 +1,28 @@
+{
+  "appName": "QCObjects Todo",
+  "sourceType": "module",
+  "relativeImportPath": "js/packages/",
+  "componentsBasePath": "templates/components/",
+  "storageKey": "qcobjects-todo:v1",
+  "localFirst": true,
+  "missionScript": {
+    "missionName": "Keep the next right thing in view",
+    "frequency": "Stealth/Precision",
+    "outcome": "A durable, focused task list that survives refresh and stays easy to act on",
+    "constraints": [
+      "No account or vendor dependency",
+      "No task data leaves this device",
+      "Every mutation must be immediately visible"
+    ],
+    "acceptance": [
+      "Create, edit, complete, reopen, filter, search, and delete todos",
+      "Persist valid todos locally",
+      "Show a safe loading and empty state"
+    ]
+  },
+  "hud": {
+    "signals": ["traction", "circuitDelta", "hallucinationDebt"],
+    "tractionGreenAt": 95,
+    "hallucinationDebtGreenAt": 0
+  }
+}

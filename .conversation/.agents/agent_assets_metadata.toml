@@ -1,0 +1,16 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "q4qd1cI_j58GyqJ5Degmo"
+uri = "file://.agents/skills/qcobjects-product-specs/SKILL.md"
+type = "text"
+title = "QCObjects product-specs skill"
+description = "Reusable guidance and bundled normative references for the QCObjects ecosystem, loaded from QCObjects/product-specs."
+logical_id = "62a4654f-0b7a-4837-b4e2-946a9cbea511"
+content_hash = "sha256:17fc46d74a6916c83340f4caae6786a301f044b813cd7b2eb77d968dc34ab614"
+size = 4606
+mtime_ms = 1788767809305
+storage_uri = "gcs://replit-rams-assets-riker/rams/assets/conversation:0f3bdd00-b37c-4102-ad7d-3e46b7094806/62a4654f-0b7a-4837-b4e2-946a9cbea511/a1b54b40-531f-4dad-a558-4314f2208630"
+storage_version_token = "1788767819846649"
+content_type = "text/markdown"

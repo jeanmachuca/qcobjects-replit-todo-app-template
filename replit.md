@@ -1,6 +1,6 @@
-# [Project name]
+# QCObjects Todo
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A local-first todo cockpit for capturing, prioritizing, and completing the next right thing.
 
 ## Run & Operate
 
@@ -22,23 +22,37 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/qcobjects-todo/src/App.tsx` — todo cockpit UI, filters, CRUD interactions, and routing.
+- `artifacts/qcobjects-todo/src/lib/todo-storage.ts` — validated local persistence for todo records.
+- `artifacts/qcobjects-todo/src/qcobjects/config.ts` — config.json loader and QCObjects runtime settings.
+- `artifacts/qcobjects-todo/src/qcobjects/todo-controller.ts` — MVC-style mutation boundary.
+- `artifacts/qcobjects-todo/src/qcobjects/vibe-leading.ts` — Mission Script and HUD telemetry.
+- `artifacts/qcobjects-todo/public/config.json` — metadata-driven app configuration.
+- `artifacts/qcobjects-todo/src/index.css` — warm cockpit visual system.
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- The first build is intentionally local-first: todo data stays in browser storage and no account or vendor service is required.
+- QCObjects conventions are represented through a runtime `config.json`, component template path, and a separate controller/model boundary so rendering stays independent from mutations.
+- VibeLeading is expressed as a Mission Script plus three HUD signals; the visible Traction percentage is derived from completed work.
+- The app uses the generated artifact routing and React/Vite shell while keeping the product contract compatible with QCObjects's metadata-driven app model.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+- Add todos with priority and optional due date.
+- Search and filter by status or priority.
+- Edit, complete/reopen, delete, and clear finished todos.
+- Persist the list locally across refreshes with safe loading and empty states.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Use QCObjects product-specs as the source of truth for metadata-driven, local-first behavior.
+- Use VibeLeading Mission Script and HUD language when planning future task flows.
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- `config.json` is served from `public/`; the loader falls back to a typed default so the UI remains usable if static config is unavailable.
+- Use `pnpm --filter @workspace/qcobjects-todo run typecheck` for the leaf app check.
 
 ## Pointers
 
